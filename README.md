@@ -144,7 +144,11 @@ docker-compose up --build
 
 ## 👥 Team
 Hariprasad Sunilkumar
+
 Allen Mathew John
+
 Benedict Shaji Skariah
+
 Bharat Shain
+
 ---
