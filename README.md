@@ -142,13 +142,19 @@ docker-compose up --build
 
 ---
 
-## 👥 Team
-Hariprasad Sunilkumar
+## 👨‍💻 Project Background
 
-Allen Mathew John
+This project was developed as part of a **college Mapathon initiative**, focused on building an **AI-powered smart parking detection and monitoring system** for real-time parking slot occupancy analysis using **YOLOv8 and OpenCV**.
 
-Benedict Shaji Skariah
+### Team Members
 
-Bharat Shain
+* **Hariprasad Sunilkumar**
+* **Allen Mathew John**
+* **Benedict Shaji Skariah**
+* **Bharat Shain**
+
+**Institution:** Rajagiri College of Engineering & Technology
+**Academic Context:** Inter College Mapathon Project
+**Academic Year:** 2025–26
 
 ---
