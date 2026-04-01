@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  smart-parking:
+    build: .
+    container_name: smart-parking-app
+    volumes:
+      - ./data:/app/data
+      - ./images:/app/images
+      - ./videos:/app/videos
+      - ./parking_slots.json:/app/parking_slots.json
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${DISPLAY}
+    network_mode: host
+    stdin_open: true
+    tty: true
