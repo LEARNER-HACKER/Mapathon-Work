@@ -154,7 +154,9 @@ This project was developed as part of a **college Mapathon initiative**, focused
 * **Bharat Shain**
 
 **Institution:** Rajagiri College of Engineering & Technology
+
 **Academic Context:** Inter College Mapathon Project
+
 **Academic Year:** 2025–26
 
 ---
