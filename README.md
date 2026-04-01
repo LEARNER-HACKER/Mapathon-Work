@@ -1,82 +1,150 @@
-# Smart Parking System - Deployment Guide
 
-## Quick Start (Without Docker)
+# 🚗 Mapathon-Work  
+AI-powered smart parking detection system using YOLOv8 and OpenCV to identify real-time parking slot occupancy from images and video.
 
-### Prerequisites
-- Python 3.8 or higher
-- pip package manager
+---
 
-### Installation
+# 🚗 AI-Based Smart Parking Detection System
 
-1. Install dependencies:
+## 📌 Overview
+This project is a computer vision-based smart parking system developed during a hackathon. It detects vehicle occupancy in parking lots using YOLOv8 and OpenCV.
+
+## 🎯 Problem Statement
+Urban areas face parking congestion due to lack of real-time parking visibility.
+
+## 💡 Solution
+Our system:
+- Detects vehicles using YOLOv8
+- Identifies parking slot boundaries
+- Classifies slots as **Occupied** or **Available**
+- Stores results in structured format (CSV/JSON)
+
+---
+
+## 🛠 Tech Stack
+- Python
+- OpenCV
+- YOLOv8
+- Docker
+
+---
+
+## 📂 Project Structure
+
+```
+mapathon-work/
+│
+├── app/
+│   ├── run.py
+│   ├── yolo_detector.py
+│   ├── line_detector.py
+│
+├── data/
+│   ├── parking_slots.json
+│   ├── sample_images/
+│   ├── sample_videos/
+│
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/mapathon-work.git
+cd mapathon-work
+```
+
+### 2️⃣ Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Run the application:
+---
+
+## ▶️ How to Run the Project
+
+### 3️⃣ Download YOLOv8 Model
+
+Install Ultralytics:
+
 ```bash
-python3 run.py
+pip install ultralytics
 ```
 
-## Docker Deployment
+Then run once in Python to automatically download the model:
 
-### Prerequisites
-- Docker installed
-- Docker Compose installed
+```python
+from ultralytics import YOLO
+YOLO("yolov8n.pt")
+```
 
-### Build and Run
+OR manually download `yolov8n.pt` and place it in the project root directory.
 
-1. Build the Docker image:
+---
+
+### 4️⃣ Verify Parking Slot Configuration
+
+Ensure the following file exists and contains parking slot coordinates:
+
+```
+parking_slots.json
+```
+
+---
+
+### 5️⃣ Run the Application
+
+If `run.py` is in the root folder:
+
 ```bash
-docker-compose build
+python run.py
 ```
 
-2. Run the container (macOS/Linux):
+If it is inside an `app` folder:
+
 ```bash
-# Allow X11 forwarding
-xhost +local:docker
-
-# Run the application
-docker-compose up
+python app/run.py
 ```
 
-3. Run the container (Windows):
+---
+
+## ✅ Expected Output
+
+- The system processes image/video input  
+- Parking slots are marked visually  
+- Occupied and Available slots are displayed  
+- Parking status is stored in CSV format  
+
+---
+
+## 🐳 (Optional) Run Using Docker
+
+If Docker is installed:
+
 ```bash
-# Install VcXsrv or Xming first
-docker-compose up
+docker-compose up --build
 ```
 
-## File Structure
+---
 
-```
-smart-parking/
-├── run.py                  # Entry point
-├── import cv2.py           # Main application
-├── line_detector.py        # Line detection utilities
-├── yolo_detector.py        # YOLO detector
-├── requirements.txt        # Python dependencies
-├── Dockerfile              # Docker configuration
-├── docker-compose.yml      # Docker Compose setup
-├── parking_slots.json      # Saved configurations
-├── yolov8n.pt             # YOLO model (auto-downloaded)
-├── data/                   # Sample data
-├── images/                 # Reference images
-└── videos/                 # Test videos
-```
+## 🚀 Future Improvements
+- Real-time web dashboard
+- IoT sensor integration
+- Smart city deployment support
 
-## Usage
+---
 
-1. **Load Video**: Click "Load Video" and select a parking lot video
-2. **Capture Frame**: Click "Capture Frame" to grab a reference frame
-3. **Draw Slots**: Click "Draw Slots Manually" to define parking areas
-4. **Start Detection**: Select detection mode (Classic/YOLO) and click START
-
-## Team
-
-**Team**: High Stakes  
-**Institution**: Rajagiri School of Engineering and Technology  
-**Contact**: u2409008@rajagiri.edu.in
-
-## License
-
-See PROJECT_REPORT.md for full details.
+## 👥 Team
+Hariprasad Sunilkumar
+Allen Mathew John
+Benedict Shaji Skariah
+Bharat Shain
+---
